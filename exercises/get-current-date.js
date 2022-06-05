@@ -3,38 +3,37 @@
 var today = new Date();
 var dd = today.getDate();
 
-var mm = today.getMonth()+1;
+var mm = today.getMonth() + 1;
 var yyyy = today.getFullYear();
 
-if (dd<10){
-    dd= '0'+dd;
+if (dd < 10) {
+  dd = "0" + dd;
 }
 if (mm < 10) {
-    mm= '0'+mm;
+  mm = "0" + mm;
 }
-today = mm+'-'+dd+'-'+yyyy;
+today = mm + "-" + dd + "-" + yyyy;
 console.log(today);
-today = mm+'/'+dd+'/'+yyyy;
+today = mm + "/" + dd + "/" + yyyy;
 console.log(today);
-today = dd+'-'+mm+'-'+yyyy;
+today = dd + "-" + mm + "-" + yyyy;
 console.log(today);
-today = dd+'/'+mm+'/'+yyyy;
+today = dd + "/" + mm + "/" + yyyy;
 console.log(today);
-
 
 //ES6
 
 let today = new Date();
 let dd = today.getDate();
 
-let mm = today.getMonth()+1;
+let mm = today.getMonth() + 1;
 const yyyy = today.getFullYear();
 
-if (dd<10){
-    dd=`0${dd}`;
+if (dd < 10) {
+  dd = `0${dd}`;
 }
-if (mm<10){
-    mm=`0${mm}`;
+if (mm < 10) {
+  mm = `0${mm}`;
 }
 today = `${mm}-${dd}-${yyyy}`;
 console.log(today);
