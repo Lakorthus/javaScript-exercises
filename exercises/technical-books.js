@@ -1,5 +1,34 @@
+class Book {
+  constructor(title, author, ISBN, numCopies) {
+    this.title = title;
+    this.author = author;
+    this.ISBN = ISBN;
+    this.numCopies = numCopies;
+  }
 
-class technicalBook extends Book {
+  get availability() {
+    return this.getAvailability();
+  }
+
+  getAvailability() {
+    if (this.numCopies === 0) {
+      return "Out of Stock";
+    } else if (this.numCopies < 10) {
+      return "Low Stock";
+    }
+    return "In Stock";
+  }
+
+  sell(numCopiesSold = 1) {
+    this.numCopies -= numCopiesSold;
+  }
+
+  restock(numCopiesRestock = 0) {
+    this.numCopies += numCopiesRestock;
+  }
+}
+
+class TechnicalBook extends Book {
   constructor(title, author, ISBN, numCopies, edition) {
     super(title, author, ISBN, numCopies);
     this.edition = edition;
@@ -10,7 +39,7 @@ class technicalBook extends Book {
   }
 }
 
-const crackingTheCodingInterview = new technicalBook(
+const crackingTheCodingInterview = new TechnicalBook(
   "Cracking the codin interview",
   "Gayle Lackman",
   1222,
@@ -18,5 +47,5 @@ const crackingTheCodingInterview = new technicalBook(
   "2.3"
 );
 
-console.log(crackingTheCodingInterview.availability)
-console.log(crackingTheCodingInterview.getEdition())
+console.log(crackingTheCodingInterview.availability);
+console.log(crackingTheCodingInterview.getEdition());
