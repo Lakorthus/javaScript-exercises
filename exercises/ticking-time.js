@@ -6,3 +6,5 @@ function clock(){
         clockNode.textContent = tick;
     },1000);
 }
+
+clock();
